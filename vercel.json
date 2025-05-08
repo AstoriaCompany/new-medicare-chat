@@ -4,9 +4,17 @@
         {
             "src": "*.html",
             "use": "@vercel/static"
+        },
+        {
+            "src": "chat-assets/**",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
+        {
+            "src": "/chat-assets/(.*)",
+            "dest": "/chat-assets/$1"
+        },
         {
             "src": "/(.*)",
             "dest": "/$1"
